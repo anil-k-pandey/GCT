@@ -52,6 +52,10 @@ namespace GCT.Models
         public int InternalBudgetContact { get; set; }
         public int ITDirectorUserId { get; set; }
         public string AdditionalComment { get; set; }
+        public decimal USD { get; set; }
+        public decimal VAT { get; set; }
+        public decimal Inflation1 { get; set; }
+        public decimal Inflation2 { get; set; }
 
 
     }
