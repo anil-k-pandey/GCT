@@ -66,7 +66,7 @@ namespace GCT.Controllers
                         return View("Dashboard");
                        
                     }
-                    else //web api sent error response 
+                    else  
                     {
                         ViewBag.Message = "Incorrect User Name or Password";
                         return View("login");
@@ -77,7 +77,6 @@ namespace GCT.Controllers
                     ViewBag.Message = "Unable to contact server! Please try after some time.";
                     return View("login");
                 }
-                return View();
             }
            
         }

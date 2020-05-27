@@ -9,7 +9,7 @@ namespace GCT.Controllers
     public class DashboardController : Controller
     {
         // GET: Dashboard
-        public ActionResult Index()
+        public ActionResult Dashboard()
         {
             return View("Dashboard");
         }
