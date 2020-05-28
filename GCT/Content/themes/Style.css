@@ -1,0 +1,766 @@
+﻿body {
+    /*font:14px arial, helvetica, sans-serif;*/
+    font-family: "Open Sans";
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+a, a:hover, a:link,
+a:visited,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+    color: #bf0d3e;
+}
+
+    a.link, a.link:hover {
+        text-decoration: underline;
+        display: block;
+    }
+
+ul {
+    list-style: none;
+}
+
+.clear {
+    clear: both;
+}
+
+.row {
+    margin: 0;
+}
+
+.mandatory {
+    font-size: 11px;
+    color: #bf0d3e;
+    float: left;
+    vertical-align: text-top;
+}
+
+.wrapper {
+    /*width: 1180px;
+	margin: 0 auto;*/
+    width: 940px;
+    margin: 0 auto;
+}
+
+.footer {
+    background: #0c2340;
+    width: 940px;
+    margin: 20px auto 0;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 11px;
+    float: left;
+}
+/************Header css starts*******/
+.header {
+    /*background: none;
+	
+	float:left;
+	width:100%;
+	position:relative;
+	 display: table;*/
+    display: table;
+    width: 100%;
+    height: 80px;
+}
+
+.orgLogo, .appLogo, .loginArea {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.orgLogo {
+    width: 28%;
+}
+
+.appLogo {
+    text-align: left;
+    font-size: 28px;
+    letter-spacing: -3px;
+    font-weight: bold;
+}
+
+.loginArea p {
+    background-color: #0c2340;
+    font-size: 20px;
+    color: #ffffff;
+    /*width: 126px;*/
+    float: right;
+    margin: 20px 0 0 0;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+    .loginArea p a {
+        color: #ffffff;
+    }
+
+/************Header css ends*******/
+
+/************Nav css starts*******/
+/*.topnav {
+	background: #bf0d3e;
+	height: 44px;
+	float:left;
+	width:100%;
+}
+
+.topnav ul li {
+	float: left;
+	display: block;
+	border: 3px solid #bf0d3e;
+	height:44px;
+	border-right-color:#0c2340;
+}
+
+.topnav ul li .fa-home {
+	font-size:24px;
+}
+
+.topnav ul li a {
+	display: block;
+	line-height: 38px;
+	font-size: 20px;
+	padding: 0 10px;
+}
+
+.topnav ul li a span {
+	color: #fff;
+}
+
+.topnav ul li.active {
+   
+	background: #fff;
+	border: 3px solid;
+	border-left:none;
+}
+
+.topnav ul li.active a span {
+	color: #0c2340;
+}
+
+.topnav ul li.home a span i {
+	padding: 5px;
+	font-size: 30px;*/
+
+/************Nav css ends*******/
+.form-group input, .form-group select {
+    border-color: #0c2340;
+}
+
+.menu {
+    list-style: none;
+    float: left;
+    /*padding: 0 0 0 20px;*/
+    width: 100%;
+    margin: 0;
+    background: #bf0d3e;
+}
+
+    .menu li {
+        float: left;
+        list-style: none;
+        display: block;
+        line-height: 40px;
+    }
+
+        .menu li.active {
+            background-color: #fff;
+        }
+
+        .menu li a {
+            color: #fff;
+            font-size: 20px;
+            display: block;
+            padding: 0 10px;
+            border: 2px solid #bf0d3e;
+            border-right-color: #fff;
+        }
+
+        .menu li.active a {
+            color: #0c2340;
+            border: 2px solid #0c2340;
+        }
+
+        .menu li a.hideRightBrdr {
+            border-right-color: #bf0d3e;
+        }
+
+.wrapper i {
+    font-size: 20px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.content i {
+    color: #bf0d3e;
+}
+
+.wrapper i.fa-home {
+    font-size: 24px;
+}
+
+.content {
+    clear: both;
+    padding: 0;
+    margin: 20px 0;
+    float: left;
+    width: 100%;
+}
+
+
+.detailsPanel {
+    border: 2px solid #0c2340;
+    position: relative;
+    padding: 20px;
+    float: left;
+    width: 100%;
+}
+
+.panelTitle {
+    position: absolute;
+    left: 20px;
+    background: #fff;
+    top: -14px;
+    font-size: 24px;
+    padding: 0 20px;
+}
+
+
+
+
+/************Wizard starts****************/
+.track-progress {
+    margin: 0 0 30px 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+    .track-progress li {
+        list-style-type: none;
+        display: inline-block;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        line-height: 30px;
+        height: 30px;
+        background-color: #0c2340;
+    }
+
+    .track-progress[data-steps="3"] li {
+        width: 33%;
+    }
+
+    .track-progress[data-steps="4"] li {
+        width: 25%;
+    }
+
+    .track-progress[data-steps="5"] li {
+        width: 20%;
+    }
+
+    .track-progress li > span {
+        display: block;
+        color: #fff;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .track-progress li.done > span {
+        color: #fff;
+        background-color: #a8ad00;
+    }
+
+    .track-progress li > span:after,
+    .track-progress li > span:before {
+        content: "";
+        display: block;
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: solid transparent;
+        border-left-color: #0c2340;
+        border-width: 15px;
+    }
+
+    .track-progress li > span:after {
+        top: -5px;
+        z-index: 1;
+        border-left-color: white;
+        border-width: 20px;
+    }
+
+    .track-progress li > span:before {
+        z-index: 2;
+    }
+
+    .track-progress li.done + li > span:before {
+        border-left-color: #a8ad00;
+    }
+
+    .track-progress li:first-child > span:after,
+    .track-progress li:first-child > span:before {
+        display: none;
+    }
+
+
+    .track-progress li:first-child i,
+    .track-progress li:last-child i {
+        display: block;
+        height: 0;
+        width: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: solid transparent;
+        border-left-color: white;
+        border-width: 15px;
+    }
+
+    .track-progress li:last-child i {
+        left: auto;
+        right: -15px;
+        border-left-color: transparent;
+        border-top-color: white;
+        border-bottom-color: white;
+    }
+
+.note {
+    background: #e4fa95;
+    padding: 10px 10px 0;
+    border: 1px solid #0c2340;
+    display: table;
+    width: 100%;
+}
+
+    .note > div {
+        display: table-cell;
+    }
+
+.noteTitle {
+    font-weight: bold;
+    margin-right: 10px;
+    width: 50px;
+}
+
+.table {
+    border: 1px solid #0b233f;
+}
+
+    .table tr:nth-child(odd) {
+        background: #edf1fc;
+        color: #0b233f;
+    }
+
+    .table tr:last-child {
+        background: #0b233f;
+        color: #fff;
+        text-align: center;
+    }
+
+    .table td, .table tbody > tr > td, .table thead > tr > th {
+        border-right: 1px solid #bbbcc1;
+    }
+
+        .table td:last-child, .table tbody > tr > td:last-child, .table thead > tr > th:last-child {
+            border-right: none;
+        }
+
+    .table tr:nth-child(even) {
+        background: #f6f7fc;
+        color: #0b233f;
+    }
+
+    .content .table tr th, .table tr th a {
+        color: #fff;
+        text-align: center;
+        font-size: 16px;
+        background: #0c2340;
+        vertical-align: middle;
+    }
+
+.btnBlue {
+    background: #b2e2f0; /* For browsers that do not support gradients */
+    border: 1px solid #8bd5ea;
+    padding: 5px 10px;
+    color: #0c2340;
+    margin-right: 20px;
+}
+
+    .btnBlue:hover {
+        color: #0c2340;
+    }
+
+.btnGreen, a.btnGreen {
+    background: #418fde; /* For browsers that do not support gradients */
+    padding: 5px 10px;
+    color: #fff;
+    margin-right: 20px;
+}
+
+    a.btnGreen:hover, .btnGreen:hover {
+        color: #fff;
+    }
+
+.downloandLink {
+    display: block;
+    float: right;
+}
+
+.topSpace {
+    margin-top: 20px;
+}
+
+.addressarea {
+    display: table;
+    width: 100%;
+}
+
+.addressRow {
+    display: table-row;
+}
+
+.addressLabel {
+    font-weight: bold;
+    text-align: right;
+}
+
+.addressarea p {
+    display: table-cell;
+    padding-right: 10px;
+}
+
+    .addressarea p span {
+        line-height: 24px;
+    }
+
+.pdfIcon {
+    color: #bf0d3e;
+    font-size: 18px;
+}
+
+.marginBottom {
+    margin-bottom: 20px;
+}
+
+[class^="col"] {
+    padding: 0;
+}
+
+.form-horizontal .form-group {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.control-label {
+    padding-right: 20px;
+}
+
+#InsuranceRenDate {
+    display: none;
+}
+
+a.signupLink, a.signupLink:hover {
+    text-align: right;
+    text-decoration: underline;
+    margin-bottom: 20px;
+}
+
+.tableScroll {
+    height: 100px; /* Just for the demo          */
+    overflow-y: auto; /* Trigger vertical scroll    */
+    overflow-x: hidden; /* Hide the horizontal scroll */
+}
+
+.divtable {
+    display: table;
+    width: 100%;
+}
+
+.divheading {
+    display: table-row;
+    font-weight: bold;
+    text-align: center;
+}
+
+.divrow {
+    display: table-row;
+}
+
+.divcell {
+    display: table-cell;
+    border: none;
+    border-width: thin;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 20px;
+}
+
+    .divcell.designation {
+        width: 40%;
+    }
+
+.footerError {
+    background: #f4cdca;
+    width: 940px;
+    margin: 20px auto 0;
+    padding: 10px;
+    text-align: left;
+    color: #fff;
+    font-size: 12px;
+    float: left;
+    border: 1px solid #bf0d3e;
+    display: table;
+}
+
+.footerSuccess {
+    background: #e6ebce;
+    width: 940px;
+    margin: 20px auto 0;
+    padding: 10px;
+    text-align: left;
+    font-size: 12px;
+    float: left;
+    border: 1px solid #a8ad00;
+}
+
+.content .successIcon i {
+    color: #a8ad00;
+}
+
+.content .successIcon {
+    display: table-cell;
+    width: 30px;
+    margin-right: 0;
+}
+
+.errorIcon {
+    color: #bf0d3e;
+    display: table-cell;
+    width: 30px;
+}
+
+.errorText, .successText {
+    color: #0c2340;
+    display: table-cell;
+}
+
+.footerError ul, .footerSuccess ul {
+    margin: 0;
+}
+
+.popup {
+    /*background:#f2a900;
+    border:1px solid #ffdaa2;*/
+    position: center;
+    /*height:50%;
+    width:150%;*/
+}
+
+.track-progress i {
+    margin-right: 0;
+}
+/*********Dialog Box*************/
+.ui-widget-overlay {
+    background: gray;
+    opacity: .6;
+}
+
+.ui-front {
+    border: 1px solid red;
+}
+
+.ui-dialog-titlebar {
+    border: 1px solid #f2a900;
+    background-color: #f2a900;
+    border-radius: 0;
+}
+
+/*.ui-dialog-title {
+    background:#f2a900;
+    border:1px solid red;
+}*/
+.messageDialog-msgText {
+    border: 0;
+}
+
+.ui-dialog-content, .ui-dialog-buttonpane, .ui-widget-content {
+    background-color: #ffdaa2;
+    border: 1px solid #ffdaa2;
+    border: none;
+    padding: 0;
+    border-radius: 0;
+}
+
+.ui-dialog-content {
+    min-height: auto !important;
+    display: block;
+}
+
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+    width: 125px;
+    margin: 0 auto;
+    float: none;
+}
+
+.ui-dialog .ui-dialog-buttonpane button {
+    border-radius: 5px;
+}
+
+.divcell select {
+    width: 220px;
+}
+
+.memberCount {
+    text-align: right;
+}
+
+.divrow hr {
+    border-top: 3px solid #000;
+    margin: 0 0 10px 0;
+}
+
+.underline {
+    text-decoration: underline;
+    color: #bf0d3e;
+}
+
+.egText {
+    opacity: 0.4;
+}
+
+.alignRight {
+    text-align: right;
+}
+
+.divtable label {
+    margin-bottom: 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.inputfile-box {
+    position: relative;
+}
+
+#PremiumUpload.inputfile {
+    display: none;
+}
+
+#MemberUpload.inputfile {
+    display: none;
+}
+
+.container {
+    display: inline-block;
+    width: 100%;
+}
+
+.file-box {
+    display: inline-block;
+    width: 100%;
+    border: 1px solid;
+    padding: 5px;
+    box-sizing: border-box;
+    height: 30px;
+    overflow: hidden;
+}
+
+.file-button {
+    position: absolute;
+    top: 0;
+    right: -113px;
+}
+
+    .file-button i {
+        color: #fff;
+    }
+
+
+.areaCodeInput {
+    width: 80px;
+    margin-left: 20px;
+}
+
+.contactNumberInput {
+    width: 150px;
+    margin-left: 20px;
+}
+/************Home Page Css starts********/
+.panelImage {
+    width: 33.33%;
+}
+
+.panelTextTitle {
+    width: 66.66%;
+    vertical-align: middle;
+    font-size: 28px;
+    padding-left: 10px;
+}
+
+.homePageText p {
+    line-height: 28px;
+}
+
+.tileIcon {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.tileLabel {
+    text-align: center;
+    background: #0c2340;
+    opacity: 1;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.tileLabelHover {
+    display: none;
+    opacity: 1;
+    color: #fff;
+    padding: 0 20px;
+    font-size: .85em
+}
+
+.tileContainer {
+    display: table;
+    width: 100%;
+}
+
+.valuesTile {
+    background: #dae1f2;
+    width: 30%;
+    display: inline-block;
+    height: 160px;
+    margin-right: 20px;
+    vertical-align: top;
+    position: relative;
+}
+
+.tileText {
+    position: absolute;
+    top: 119px;
+    width: 100%;
+    background: #0c2340;
+    opacity: 0.8;
+}
+
+    .tileText p {
+        margin-bottom: 0;
+    }

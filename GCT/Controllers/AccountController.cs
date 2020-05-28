@@ -1,41 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Newtonsoft.Json;
+using System;
 using System.Net.Http;
-using System.Web;
 using System.Web.Mvc;
 using GCT.Models;
-using Newtonsoft.Json;
-
+using System.Web.Security;
 
 namespace GCT.Controllers
 {
-    public class HomeController : Controller
+    public class AccountController : Controller
     {
-        public ActionResult Index()
-        {
-            return View();
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-
+        // GET: Account
+        [AllowAnonymous]
         public ActionResult Login()
         {
-            ViewBag.Message = "";
-
-            return View();
+            return View("Login");
         }
 
         [HttpPost]
@@ -45,8 +23,8 @@ namespace GCT.Controllers
 
             using (HttpClient client = new HttpClient())
             {
-                client.BaseAddress = new Uri("http://localhost:61633/api/login/login");                
-                var responseTask =  client.PostAsJsonAsync("Login", model);
+                client.BaseAddress = new Uri("http://localhost:61633/api/login/login");
+                var responseTask = client.PostAsJsonAsync("Login", model);
                 responseTask.Wait();
 
                 var result = responseTask.Result;
@@ -60,13 +38,15 @@ namespace GCT.Controllers
                         Name = ""
                     };
                     var jsonResult = JsonConvert.DeserializeObject(userString);
-                    var user = JsonConvert.DeserializeAnonymousType(jsonResult.ToString(),userResult);
+                    var user = JsonConvert.DeserializeAnonymousType(jsonResult.ToString(), userResult);
                     if (user.ID != "0")
                     {
-                        return View("Dashboard");
-                       
+                        FormsAuthentication.SetAuthCookie(model.UserName, true);
+
+                        return RedirectToAction("Dashboard", "Dashboard");
+
                     }
-                    else  
+                    else
                     {
                         ViewBag.Message = "Incorrect User Name or Password";
                         return View("login");
@@ -78,12 +58,7 @@ namespace GCT.Controllers
                     return View("login");
                 }
             }
-           
-        }
 
-        public ActionResult Cancel()
-        {
-            return View("Index");
         }
     }
 }
