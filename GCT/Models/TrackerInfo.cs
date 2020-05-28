@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace GCT.Models
 {
@@ -11,46 +12,54 @@ namespace GCT.Models
         public int ProjectId { get; set; }
         public int RegionId { get; set; }
         public int CountryId { get; set; }
+        public List<SelectListItem> CountryNameList { get; set; }
         public string ResponsibilityCenterNumber { get; set; }
         public string ResponsibilityCenterName{ get; set; }
         public int ExpenseCategory { get; set; }
         public int VendorId { get; set; }
+        public List<SelectListItem> VendorsList { get; set; }
         public int RequsitionNumber { get; set; }
         public int CurrencyCodeId { get; set; }
+        public List<SelectListItem> CurrencyCodeList { get; set; }
         public decimal LocalCurrencyFxRate { get; set; }
+        public List<SelectListItem> LocalCurrencyFRList { get; set; }
         public decimal LocalCurrencyRPIRate { get; set; }
-        public int BudgetLocalCurrency { get; set; }
-        public int BudgetUSD { get; set; }
-        public int ActualLocalCurrency { get; set; }
-        public int ActualUSD { get; set; }
+        public List<SelectListItem> LocalCurrencyRRList { get; set; }
+        public decimal BudgetLocalCurrency { get; set; }
+        public decimal BudgetUSD { get; set; }
+        public decimal ActualLocalCurrency { get; set; }
+        public decimal ActualUSD { get; set; }
         public DateTimeOffset CashStartDate { get; set; }
         public DateTimeOffset CashEndDate { get; set; }
         public DateTimeOffset PLStartDate { get; set; }
         public DateTimeOffset PLEndDate { get; set; }
         public string RequisitonDescription { get; set; }
-        public int PrimaryVariance { get; set; }
-        public int SecondaryVariance { get; set; }
-        public int ReceiptNumber { get; set; }
+        public string PrimaryVariance { get; set; }
+        public List<SelectListItem> PrimaryVarianceList { get; set; }
+        public string SecondaryVariance { get; set; }
+        public List<SelectListItem> SecondaryVarianceList { get; set; }
+        public string ReceiptNumber { get; set; }
         public string Comments { get; set; }
         public int Renewal { get; set; }
-        public int Jan { get; set; }
-        public int Feb { get; set; }
-        public int Mar { get; set; }
-        public int Apr { get; set; }
-        public int May { get; set; }
-        public int Jun { get; set; }
-        public int Jul { get; set; }
-        public int Aug { get; set; }
-        public int Sep { get; set; }
-        public int Oct { get; set; }
-        public int Nov { get; set; }
-        public int Dec { get; set; }
-        public int Total { get; set; }
-        public int VarianceToBudget { get; set; }
-        public int BudgetLocalCurrencyNextYear { get; set; }
-        public int BudgetNextYear { get; set; }
-        public int InternalBudgetContact { get; set; }
-        public int ITDirectorUserId { get; set; }
+        public List<SelectListItem> RenewalList { get; set; }
+        public decimal Jan { get; set; }
+        public decimal Feb { get; set; }
+        public decimal Mar { get; set; }
+        public decimal Apr { get; set; }
+        public decimal May { get; set; }
+        public decimal Jun { get; set; }
+        public decimal Jul { get; set; }
+        public decimal Aug { get; set; }
+        public decimal Sep { get; set; }
+        public decimal Oct { get; set; }
+        public decimal Nov { get; set; }
+        public decimal Dec { get; set; }
+        public decimal Total { get; set; }
+        public decimal VarianceToBudget { get; set; }
+        public decimal BudgetLocalCurrencyNextYear { get; set; }
+        public decimal BudgetNextYear { get; set; }
+        public string InternalBudgetContact { get; set; }
+        public string ITDirectorUserId { get; set; }
         public string AdditionalComment { get; set; }
         public decimal USD { get; set; }
         public decimal VAT { get; set; }

@@ -1,0 +1,269 @@
+﻿@model GCT.Models.TrackerInfo
+
+@{
+    ViewBag.Title = "Budget Details Entry";
+}
+
+@using (Html.BeginForm("", "", FormMethod.Post))
+{
+    <div class="jumbotron">
+        <h3>Budget Details Entry</h3>
+    </div>
+    <div class="row">
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>Project</span></div>
+            <div class="ele-input">@Html.TextBoxFor(x => x.ProjectCode, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>Region</span></div>
+            <div class="ele-input">@Html.TextBoxFor(x => x.RegionId, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>Country</span></div>
+            <div class="ele-input">@Html.DropDownListFor(x => x.CountryId, Model.CountryNameList, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>Responsibility Center Number</span></div>
+            <div class="ele-input">@Html.TextBoxFor(x => x.ResponsibilityCenterNumber, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>Responsibility Center Name</span></div>
+            <div class="ele-input">@Html.TextBoxFor(x => x.ResponsibilityCenterName, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>Expense Category</span></div>
+            <div class="ele-input">@Html.TextBoxFor(x => x.ExpenseCategory, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>Vendor Name</span></div>
+            <div class="ele-input">@Html.DropDownListFor(x => x.VendorId, Model.VendorsList, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>RequsitionNumber</span></div>
+            <div class="ele-input">@Html.TextBoxFor(x => x.RequsitionNumber, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>Currency Code</span></div>
+            <div class="ele-input">@Html.DropDownListFor(x => x.CurrencyCodeId, Model.CurrencyCodeList, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>Local Currency Fx Rate</span></div>
+            <div class="ele-input">@Html.DropDownListFor(x => x.LocalCurrencyFxRate, Model.LocalCurrencyFRList, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>Local Currency RPI Rate</span></div>
+            <div class="ele-input">@Html.DropDownListFor(x => x.LocalCurrencyRPIRate, Model.LocalCurrencyRRList, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>Budget (Local Currency)</span></div>
+            <div class="ele-input">@Html.TextBoxFor(x => x.BudgetLocalCurrency, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>Budget (USD)</span></div>
+            <div class="ele-input">@Html.TextBoxFor(x => x.BudgetUSD, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>Actual (Local Currency)</span></div>
+            <div class="ele-input">@Html.TextBoxFor(x => x.ActualLocalCurrency, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>Actual (USD)</span></div>
+            <div class="ele-input">@Html.TextBoxFor(x => x.ActualUSD, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>Cash Start Date</span></div>
+            <div class="ele-input">@Html.TextBoxFor(x => x.CashStartDate, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>Cash End Date</span></div>
+            <div class="ele-input">@Html.TextBoxFor(x => x.CashEndDate, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>PL Start Date</span></div>
+            <div class="ele-input">@Html.TextBoxFor(x => x.PLStartDate, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>PL End Date</span></div>
+            <div class="ele-input">@Html.TextBoxFor(x => x.PLEndDate, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>Requisiton Description</span></div>
+            <div class="ele-input">@Html.TextAreaFor(x => x.RequisitonDescription, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>Primary Variance</span></div>
+            <div class="ele-input">@Html.DropDownListFor(x => x.PrimaryVariance, Model.PrimaryVarianceList, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>Secondary Variance</span></div>
+            <div class="ele-input">@Html.DropDownListFor(x => x.SecondaryVariance, Model.SecondaryVarianceList, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>Receipt Number</span></div>
+            <div class="ele-input">@Html.TextBoxFor(x => x.ReceiptNumber, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>Comments</span></div>
+            <div class="ele-input">@Html.TextAreaFor(x => x.Comments, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>Renewal</span></div>
+            <div class="ele-input">@Html.DropDownListFor(x => x.Renewal, Model.RenewalList, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+        <div class="col-md-4 ele-box">
+        </div>
+        <div class="col-md-4 ele-box">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>January</span></div>
+            <div class="ele-input">@Html.TextBoxFor(x => x.Jan, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>February</span></div>
+            <div class="ele-input">@Html.TextBoxFor(x => x.Feb, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>March</span></div>
+            <div class="ele-input">@Html.TextBoxFor(x => x.Mar, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>April</span></div>
+            <div class="ele-input">@Html.TextBoxFor(x => x.Apr, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>May</span></div>
+            <div class="ele-input">@Html.TextBoxFor(x => x.May, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>June</span></div>
+            <div class="ele-input">@Html.TextBoxFor(x => x.Jun, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>July</span></div>
+            <div class="ele-input">@Html.TextBoxFor(x => x.Jul, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>August</span></div>
+            <div class="ele-input">@Html.TextBoxFor(x => x.Aug, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>September</span></div>
+            <div class="ele-input">@Html.TextBoxFor(x => x.Sep, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>October</span></div>
+            <div class="ele-input">@Html.TextBoxFor(x => x.Oct, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>November</span></div>
+            <div class="ele-input">@Html.TextBoxFor(x => x.Nov, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>December</span></div>
+            <div class="ele-input">@Html.TextBoxFor(x => x.Dec, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>VarianceToBudget</span></div>
+            <div class="ele-input">@Html.TextBoxFor(x => x.Oct, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>BudgetLocalCurrencyNextYear</span></div>
+            <div class="ele-input">@Html.TextBoxFor(x => x.Nov, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+        <div class="col-md-4 ele-box">
+            <div class="ele-label"><span>BudgetNextYear</span></div>
+            <div class="ele-input">@Html.TextBoxFor(x => x.Dec, new { @class = "form-control" })</div>
+            <div class="has-error"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            &nbsp;
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+            <input type="submit" value="Submit" class="btn btn-success" style="float: right;" />
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.ele-box .ele-input, .ele-box .has-error').hide();
+            var row_ele = $('.ele-label');
+            row_ele.on('click', function () {
+                $('.ele-box .ele-input, .ele-box .has-error').hide();
+                $(this).parent().parent().find('.ele-input').show();
+            });
+        });
+    </script>
+}
