@@ -1,0 +1,65 @@
+﻿@{
+                /**/
+
+                ViewBag.Title = "Home Page";
+                Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model GCT.Models.Login
+
+@{
+    ViewBag.Title = "Log in";
+}
+<div class="detailsPanel">
+    <div class="panelTitle">Login</div>
+    <div class="row">
+        <section id="loginForm">
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.UserName, string.Format("{0} :", Html.DisplayNameFor(m => m.UserName)), new { @class = "col-md-5 control-label" })
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password, string.Format("{0} :", Html.DisplayNameFor(m => m.Password)), new { @class = "col-md-5 control-label" })
+                    <div class="col-md-3">
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-6 col-md-5">
+                        <input type="submit" value="Log in" class="btn btnGreen" />
+                        <a href="@Url.Action("Index", "Home")" class="btn">Cancel</a>
+                    </div>
+                </div>
+
+            }
+        </section>
+    </div>
+</div>
+
+@if (Html.ViewData.ModelState.Any(x => x.Key == ""))
+{
+    <div id="errorMessage" class="footerError">
+        <span class="errorIcon"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>&nbsp;</span>
+        @Html.ValidationSummary(true, "", new { @class = "errorText" })
+    </div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        var loginLi = ('<li class="loginLi"><a href="#nogo"><span>Login</span></a></li>');
+        $('.loginArea p a').addClass('loginActive');
+        $('ul.menu').append(loginLi);
+        setMenu('.loginLi');
+        $('.loginArea').hide();
+    });
+</script>
