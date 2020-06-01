@@ -358,15 +358,18 @@ ul {
 
 .table {
     border: 1px solid #0b233f;
+    
+    overflow-x: auto;
 }
 
     .table tr:nth-child(odd) {
-        background: #edf1fc;
+        /*background: #edf1fc;*/
+        background: gray;
         color: #0b233f;
     }
 
     .table tr:last-child {
-        background: #0b233f;
+       /* background: #0b233f; */
         color: #fff;
         text-align: center;
     }

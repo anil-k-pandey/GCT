@@ -1,34 +1,188 @@
 ﻿@{
-    ViewBag.Title = "Dashboard";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+                /**/
 
-<div class="detailsPanel">
+                ViewBag.Title = "Dashboard";
+                Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using GCT.Models;
+@inherits System.Web.Mvc.WebViewPage<TrackerInfo>
+<div class="detailsPanel" style="overflow-x:auto;">
     <div class="panelTitle">User Home</div>
-    <div class="row">
-        &nbsp;
-    </div>
-    <div class="row" style="margin-left:20%;margin-top:5%">
-        <div class="col-md-2">
-            <a href="#" alt="Bulk Upload">
-                <img src="~/Content/Images/upload.png" />
-                <span>Bulk Upload</span>
-            </a>
-        </div>
-        <div class="col-md-2">
-            <a href="#" alt="Add New Item">
-                <img src="~/Content/Images/AddEntry.png" />
-                <span>Add Entry</span>
-            </a>
-        </div>
-        <div class="col-md-2">
-            <a href="#" alt="Add New Item">
-                <img src="~/Content/Images/ViewEntry.png" />
-                <span>View Entry</span>
-            </a>
-        </div>
-    </div>
-    <div class="row">
-        &nbsp;
-    </div>
+
+    <table class="table table-bordered tbl_style">
+        <thead>
+            <tr>
+                <th>Project Code</th>
+                <th>Project Name</th>
+                <th>Region</th>
+                <th>Country</th>
+                <th>
+                    Responsibility Centre Number
+                </th>
+                <th>
+                    Responsibility Centre Name
+                </th>
+                <th>
+                    Expense Catergory
+                </th>
+                <th>Vendor</th>
+                <th>
+                    Requsition Number
+                </th>
+                <th>
+                    Currency Code
+                </th>
+                <th>
+                    Local Currency - FX Rate
+                </th>
+                <th>
+                    Local Currency - RPI Rate
+                </th>
+                <th>
+                    Year Budget - Local Currency
+                </th>
+                <th>
+                    Year Budget USD
+                </th>
+                <th>
+                    Actual Year Local Currency
+                </th>
+                <th>
+                    Actual Year USD
+                </th>
+                <th>
+                    Cash Start Date
+                </th>
+                <th>
+                    Cash End Date
+                </th>
+                <th>
+                    P&L Start Date
+                </th>
+                <th>
+                    P&L End Date
+                </th>
+                <th>
+                    Requisiton Description
+                </th>
+                <th>
+                    Primary Variance
+                </th>
+                <th> Secondary Variance </th>
+                <th>
+                    Receipt numbers
+                </th>
+                <th>
+                    Comments
+                </th>
+                <th>
+                    Renewal
+                </th>
+                <th>Jan</th>
+                <th>Feb</th>
+                <th>March</th>
+                <th>Apr</th>
+                <th>May</th>
+                <th>Jun</th>
+                <th>Jul</th>
+                <th>Aug</th>
+                <th>Sep</th>
+                <th>Oct</th>
+                <th>Nov</th>
+                <th>Dec</th>
+
+                <th>
+                    Total
+                </th>
+                <th>
+                    Variance to Budget
+                </th>
+                <th>
+                    Next Year budget (local Currency)
+                </th>
+                <th>
+                    2021 budget (US)
+                </th>
+                <th>
+                    Internal Contact
+                </th>
+                <th>
+                    IT Director
+                </th>
+                <th>
+                    Additional comments
+                </th>
+                <th>
+                    USD
+                </th>
+                <th>
+                    VAT
+                </th>
+                <th>
+                   Inflation 1
+                </th>
+                <th>
+                   Inflation 2
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.TrackerModels)
+            {
+
+            <tr>
+                <td>@item.ProjectCode</td>
+                <td>@item.ProjectName</td>
+                <td>@item.Region</td>
+                <td>@item.CountryName</td>
+                <td>@item.ResponsibilityCentreNumber</td>
+                <td>@item.ResponsibilityCentreName</td>
+                <td>@item.ExpenseCategory</td>
+                <td>@item.VendorName </td>
+                <td> @item.RequisitionNumber</td>
+                <td>@item.CurrencyCode </td>
+                <td> @item.LocalCcyFxRate</td>
+                <td>@item.LocalCcyRPIRate </td>
+                <td>@item.BudgetLocalCcy </td>
+                <td>@item.BudgetUSCcy </td>
+                <td>@item.ActualLocalCcy </td>
+                <td>@item.ActualUSCcy </td>
+                <td> @item.CashStartDate</td>
+                <td>@item.CashEndDate </td>
+                <td>@item.PLStartDate </td>
+                <td>@item.PLEndDate </td>
+                <td>@item.RequisitionDescription </td>
+                <td>@item.PrimaryVariancName </td>
+                <td>@item.SecondaryVarianceName </td>
+                <td>@item.ReceiptNumber </td>
+                <td> @item.Comments</td>
+                <td>@item.Renewal </td>
+                <td>@item.January </td>
+                <td>@item.February </td>
+                <td>@item.March </td>
+                <td> @item.April</td>
+                <td>@item.May </td>
+                <td>@item.June </td>
+                <td> @item.July</td>
+                <td> @item.August</td>
+                <td> @item.Septemeber</td>
+                <td> @item.October</td>
+                <td> @item.November</td>
+                <td> @item.December</td>
+                <td> @item.TotalBudget</td>
+                <td>@item.VarianceInBudget </td>
+                <td> @item.NextYrLocalCcyBudget</td>
+                <td>@item.NextYrUSCcyBudget </td>
+                <td> @item.InternalContractor</td>
+                <td> @item.ITDirector</td>
+                <td> @item.AdditionalComments</td>
+                <td> @item.USD</td>
+                <td> @item.VAT</td>
+                <td> @item.Inflation1</td>
+                <td> @item.Inflation2</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
 </div>

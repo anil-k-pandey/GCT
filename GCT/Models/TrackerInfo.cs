@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace GCT.Models
@@ -66,6 +64,6 @@ namespace GCT.Models
         public decimal Inflation1 { get; set; }
         public decimal Inflation2 { get; set; }
 
-
+        public List<TrackerModel> TrackerModels { get; set; }
     }
 }
